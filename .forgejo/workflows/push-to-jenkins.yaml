@@ -1,0 +1,22 @@
+name: Start Jenkins build
+
+# Controls when the workflow will run
+on: [push, pull_request] # Triggers the workflow on push or pull request events
+
+jobs:
+  build:
+    # The type of runner that the job will run on - targeting the 'docker' label
+    runs-on: docker
+
+    container:
+      image: ubuntu:rolling
+
+    steps:
+      - name: Install curl (Why is curl not pre-installed?!?!)
+        run: apt update && apt install curl -y
+
+      - name: Tell Jenkins to start the build.
+        env:
+          JENKINS: ${{ secrets.jenkins }}
+        run: curl "https://builds.dylan.at/buildByToken/build?job=A2/Game%20Development%20Document&token=sarcasm"
+
