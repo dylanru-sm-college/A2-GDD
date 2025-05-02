@@ -10,6 +10,10 @@
 \usepackage{graphicx}
 \usepackage{changepage}
 \usepackage[british]{babel}
+\usepackage[many]{tcolorbox}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{tikzmark}
+\usepackage{lipsum}
 
 \title{GDD (Game Design Document) for A2}
 \author{Dylan Rumble-Smith}
@@ -17,6 +21,15 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
+
+\newtcolorbox{note}[1][]{
+	width=\textwidth,
+	fonttitle=\bfseries,
+	breakable,
+	fonttitle=\bfseries\color{Brown},
+	colframe=orange,
+	colback=orange!10
+	#1}
 
 \begin{document}
 	{\setlength{\parskip}{0pt}%
@@ -85,6 +98,11 @@
 	\end{itemize} \cite{steamHardwareSurvey}
 	
 	\section{Gameplay and Mechanics}
+	\begin{note}
+		\textbf{Note:} Due to an unexpected cyberattack against the school network, many essential services were down. These services being down caused many students to not be able to do their school work. To make up for this, the games department reduced the scope of the brief to one where you only have to make the level. So, many of the mechanics are missing from the build of the game. The mechanics listed here were the \textbf{proposed} mechanics before any idea of a cyberattack.
+	\end{note}
+	\subsection{Gameplay Loop}
+	The gameplay loop consists of doing a parkour level and being brought back to the start if the player has hit a fail condition (E.g. the player jumped of a surface) or if the player has decided to reset the level through a GUI. This repetition of playing the same course over and over again until their successful final run gives the player fulfillment once they have finished their final run.
 	\pagebreak
 	{\setlength{\parskip}{0pt}%
 	\bibliography{references}
