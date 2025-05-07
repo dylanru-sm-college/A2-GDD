@@ -14,6 +14,11 @@
 \usepackage{tikzpagenodes}
 \usetikzlibrary{tikzmark}
 \usepackage{lipsum}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+
 
 \title{GDD (Game Design Document) for A2}
 \author{Dylan Rumble-Smith}
@@ -30,6 +35,22 @@
 	colframe=orange,
 	colback=orange!10
 	#1}
+
+
+\newcommand*\keystroke[1]{%
+	\tikz[baseline=(key.base)]
+	\node[%
+	draw,
+	fill=white,
+	drop shadow={shadow xshift=0.25ex,shadow yshift=-0.1ex,fill=black,opacity=0.75},
+	rectangle,
+	rounded corners=2pt,
+	inner sep=1pt,
+	line width=0.5pt,
+	font=\scriptsize\sffamily
+	](key) {#1\strut}
+	;
+}
 
 \begin{document}
 	{\setlength{\parskip}{0pt}%
@@ -114,7 +135,29 @@
 	\end{figure}
 	
 	I am not planning to add controller support into the game.
-	\pagebreak
+	
+	\subsection{Player Abilities}
+	The player has multiple abilities (bar the regular movement):
+	\begin{itemize}[]
+		\item Boost \keystroke{SHIFT} - The player can add some momentum in the air by hitting the \keystroke{SHIFT} key. This, along with a jump, via the \keystroke{SPACEBAR} key, propels the player further.
+		\begin{figure}[h]
+			\includegraphics[scale=0.2]{jumpAndBoostForces}
+			\centering
+			\caption{An annotated keyboard with the specific actions shown on each key}
+		\end{figure}
+		\newpage
+		\item Sliding \keystroke{N/A} - The slide mechanic allows for players to pick up speed along downward slopes. The player can use their mouse to control the direction of the slide. Sliding only works if the angle is in a goldilocks zone of angles.
+		\begin{figure}[h]
+			\includegraphics[scale=0.1]{angleSteepness}
+			\centering
+			\caption{A diagram showing "good angles" and "too steep / small of an angle".}
+		\end{figure}
+	\end{itemize}
+
+	\subsection{Difficulty and Progression}
+	The games difficulty is
+	
+	\newpage
 	{\setlength{\parskip}{0pt}%
 	\bibliography{references}
 	}
