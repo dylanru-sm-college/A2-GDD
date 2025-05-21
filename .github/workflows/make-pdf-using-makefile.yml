@@ -12,6 +12,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y texlive-latex-recommended cmake
+          tlmgr init-usertree
           sudo tlmgr install enumitem
 
       - name: Make PDF
