@@ -11,10 +11,8 @@ jobs:
       - name: Install needed packages using APT & TLMGR
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-recommended cmake
-          sudo tlmgr init-usertree
-          sudo tlmgr install enumitem
-
+          sudo apt-get install -y texlive-latex-recommended texlive-latex-extra cmake
+          
       - name: Make PDF
         run: |
           make
