@@ -4,13 +4,14 @@ jobs:
   Make-PDF:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with:
+          path: '.'
 
       - name: Install needed packages using APT
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-reccomended cmake
+          sudo apt-get install -y texlive-latex-recommended cmake
 
       - name: Make PDF
         run: |
