@@ -1,0 +1,14 @@
+name: Make PDF
+on: [push]
+jobs:
+  Make-PDF:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install packages using APT
+	run |
+	  apt install texlive-full
+	  apt install cmake
+      - name: List files in the repository
+        run: |
+          cd ${{ github.workspace }} && make
+
