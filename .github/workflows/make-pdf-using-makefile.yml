@@ -4,10 +4,20 @@ jobs:
   Make-PDF:
     runs-on: ubuntu-latest
     steps:
-      - name: Install packages using APT
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Install needed packages using APT
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-full cmake
-      - name: List files in the repository
+          sudo apt-get install -y texlive-latex-reccomended cmake
+
+      - name: Make PDF
         run: |
-          cd ${{ github.workspace }} && make
+          make
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: GDD
+          path: main.pdf
