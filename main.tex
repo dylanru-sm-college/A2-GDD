@@ -186,8 +186,29 @@
 	\section{Art and Aesthetics}
 	\subsection{Art Style}
 	I am trying to aim for a realistic art style as that is one of Unreal Engine's specialities. This means I will be using models with high polygon counts, however low-quality LODs could be used as for a lot of the time the player will be far away from the objects.
+	\subsection{UI/UX Design}
+	\begin{figure}[h]
+			\includegraphics[scale=0.3]{mainMenu.png}
+			\centering
+			\caption{The main menu}
+	\end{figure}
+	This was my main idea for the user interface for the game, it would have buttons for starting the game, entering the settings and quitting the game. I was thinking about having the background being a video of the games levels; darkened and with a gaussian blur.
 	
-	%TODO: Environment Design
+	Hitting the \keystroke{Escape} key will take you back to this screen whilst in a level.
+	\newpage
+	\begin{figure}[h]
+			\includegraphics[scale=0.3]{levelSelect.png}
+			\centering
+			\caption{The level selector}
+	\end{figure}
+	Each of the levels are selectable within the UI and once they are clicked they are loaded. Currently, the images for the level selector are just placeholder images. They would be replaced by actual images of the level once the game is done.
+	\begin{figure}[h]
+			\includegraphics[scale=0.365]{inGameUI.png}
+			\centering
+			\caption{The in-game UI}
+	\end{figure}
+	
+	The in-game UI has 2 major elements. The current speed of the character and the current amount of points. Both of these update on every game tick.
 	%TODO: UI/UX Design (menus, HUDs)
 	%TODO: Visual References / Mood Boards
 	
