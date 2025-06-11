@@ -213,20 +213,31 @@
 	\subsection{Mood Boards}
 	%TODO: Visual References / Mood Boards
 	
-	%TODO: Audio Design
-	\section{Audio Design}
-	To make the gameplay a little more interesting I wanted to implement some music and sound effects. If I had some extra time to work on the project I would of implemented these.
+	\section{Audio}
+	To make the gameplay a little more interesting I wanted to implement some music and sound effects. If I had some extra time to work on the project I would have implemented these.
 	\subsection{Music Style and Technical Aspects}
- 	One thing I am really inspired by and one thing I would love to make in this game is adaptive music. Adaptive music is a kind of music where the music changes based on what is happening in the game. For example, you could add or remove instruments or change tracks seamlessly. I would say the music genre for this game would be a electronic one with my major inspirations being from artists such as Daft Punk.
+ 	One thing I am really inspired by and one thing I would love to make in this game is adaptive music. Adaptive music is a kind of music where the music changes based on what is happening in the game. For example, you could add or remove instruments or change tracks seamlessly. I would say the music genre for this game would be an electronic one with my major inspirations being from artists such as Daft Punk.
 	\subsection{Audio Cues and Sound Effects}
-	There will be a few click sounds effects for clicking on UI elements and a couple smashing sound effects when the player breaks parts of the level.
+	There will be a few click sounds effects for clicking on UI elements and a couple smashing sound effects when the player breaks parts of the level. These would be sourced from internet foley sources that have a open license. 
+	\subsection{Technical Aspects}
+	These would be played using UE5's \href{https://dev.epicgames.com/documentation/en-us/unreal-engine/metasounds-the-next-generation-sound-sources-in-unreal-engine}{Metasounds}. This way I can load in tracks and control audio using code. This also allows me to control the cardinal direction and, due to that, what speakers / pair of speakers play the actual audio.
+	\section{General Technical Aspects}
+	\subsection{Engine}
+	I am using, if it's not clear already, UE5. This is because it is one of the biggest engines and it has some of the best tooling available.
+	\subsection{Performance Targets}
+	I want the game to run at a reasonable 60FPS on a Nvidia Geforce 1660 since that is a low-middle end GPU I own and therefore can test on.
 	
-	%TODO: Technical Aspects
-	%TODO: Engine (Unity, Unreal, Godot — tie in with your intro)
-	%TODO: Performance Goals / Constraints
-	
-	%TODO: Project Management
-	%TODO: Tools (Trello, GitHub, Jira)
+	\section{Project Management}
+	\subsection{Monday.com}
+	I am using monday.com to act as a to-do list. Monday.com is good as it allows for you to visualise your tasks as a gantt chart.
+	\subsection{Github and Git}
+	I am using Github to store my written work. After I make a change I can use git to create a commit (a store of my files in a point in time with a message to say what I have changed) and then push it of to Github (a place to store files tracked with Git). I can then get Github to turn my work into a PDF document using a YAML file and Github Actions. \href{https://github.com/dylanru-sm-college/A2-GDD}{Here} is a link to this text on Github.
+	\begin{figure}[h]
+			\includegraphics[scale=0.29]{githubActionsUI.png}
+			\centering
+			\caption{Github Actions compiling my work.}
+	\end{figure}
+
 	\newpage
 	{\setlength{\parskip}{0pt}%
 	\bibliography{references}
